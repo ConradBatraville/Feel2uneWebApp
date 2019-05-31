@@ -5,12 +5,20 @@ import './App.css';
 let fakeServerData = {
   user: {
     name: 'Chanelle',
-    track: 
+    tracks: [
       {
         name: 'Dedication (feat. Kendrick Lamar)',
         artist: 'Nipsey Hussle',
-        album: 'Victory Lap'
+        album: 'Victory Lap',
+        image: 'https://cdn-images-1.medium.com/max/1200/1*iEVGKX5GIcIRxztd9p2w5g.jpeg'
+      },
+      {
+        name: 'From Home, to WOrk, and Back',
+        artist: 'Tall Black Guy',
+        album: '8 Miles to Moenart',
+        image: 'https://f4.bcbits.com/img/a2731283108_10.jpg'
       }
+    ]
   }
 }
 
@@ -19,10 +27,10 @@ class CurrentlyPlaying extends Component {
     console.log(this.props)
     return(
       <div style={{width:'60%'}}>
-        <img/>
-        <h3 style={{color: 'blue'}}>{this.props.track && this.props.track.name}</h3>
-        <h4 style={{color: 'red'}}>{this.props.track && this.props.track.artist}</h4>
-        <h5 style={{color: 'red'}}>{this.props.track && this.props.track.album}</h5>
+        <img style={{width: '70%'}} src={this.props.tracks[0].image} alt=''/>
+        <h3 style={{color: 'blue'}}>{this.props.tracks && this.props.tracks[0].name}</h3>
+        <h4 style={{color: 'red'}}>{this.props.tracks && this.props.tracks[0].artist}</h4>
+        <h5 style={{color: 'red'}}>{this.props.tracks && this.props.tracks[0].album}</h5>
       </div>
     )
   }
@@ -45,21 +53,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({serverData: fakeServerData}), 1000)
+
   }
   render() {
     return (
       <div className="App">
         { this.state.serverData.user ?
         <div>
-          <h1 style={{'font-size': '50px'}}>
-            Hey{this.state.serverData.user.name}, let's Feel2une !
+          <h1 style={{'fontSize': '50px'}}>
+            Hey {this.state.serverData.user.name}, let's Feel2une !
           </h1>
-          <CurrentlyPlaying track={this.state.serverData.user.track} />
+          <CurrentlyPlaying tracks={this.state.serverData.user.tracks} />
           <Mood/>
           <Mood/>
           <Mood/>
-        </div> : <h1>Loading ....</h1>
+        </div> : <button style={{color: 'green', padding: '80px', 'font-size': '50px', 'margin-top': '70px'}}>Sign in with Spotify</button>
         }
       </div>
     );
@@ -67,3 +75,4 @@ class App extends Component {
 }
 
 export default App;
+
