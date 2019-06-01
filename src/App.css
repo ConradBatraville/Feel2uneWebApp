@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: lightslategray
 }
 
 .App-logo {
@@ -22,6 +21,10 @@
 
 .App-link {
   color: #61dafb;
+}
+.recentPlaysList {
+  display: flex;
+  flex-direction: row;
 }
 
 @keyframes App-logo-spin {
