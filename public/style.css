@@ -1,0 +1,126 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.title {
+  /* padding: 2vh 18vw; */
+  margin: 0% 5%;
+}
+
+.trackInfo {
+  padding: 5vh 7vw;
+  display: flex;
+  align-items: center;
+}
+
+#my_centered_buttons {
+  /* display: flex; 
+  position: center; */
+  margin: 45% 35%;
+}
+
+.logo {
+  margin: 0% 30%;
+}
+
+/* body {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+label {
+  display: block;
+}
+
+nav a {
+  display: inline-block;
+  margin: 1em;
+}
+
+form div {
+  margin: 1em;
+  display: inline-block;
+}
+
+body {
+  padding: 5vh 5vw;
+}
+
+p {
+  max-width: 700px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+input {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid lightgrey;
+}
+
+footer > a {
+  color: #BBBBBB;
+}
+
+.nicejob {
+  text-decoration: line-through; */
+/* } */
+
+/* .button {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+} */
+/* 
+.moodbuttons {
+  display: flex;
+  flex-direction: column;
+  width: 50%
+}
+
+#results {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 30vh;
+}
+
+#results li {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  #results {
+    display: inline-block;
+    max-height: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #results {
+    max-height: 15vh;
+  }
+}
+
+#features-chart {
+  width: 100%;
+  min-height:400px;
+} */
