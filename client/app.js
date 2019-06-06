@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import {Spotify} from './components'
+import { Spotify } from './components';
 // import Routes from './routes'
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
       <Spotify />
       {/* <Routes /> */}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

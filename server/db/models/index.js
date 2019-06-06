@@ -1,4 +1,4 @@
-const GiantPlaylist = require('./giantPlaylist')
+const GiantPlaylist = require('./giantPlaylist');
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -15,4 +15,4 @@ const GiantPlaylist = require('./giantPlaylist')
  */
 module.exports = {
   GiantPlaylist
-}
+};
