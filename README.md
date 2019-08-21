@@ -1,5 +1,5 @@
 # Feel2une
-* [Conrad Batraville](https://github.com/theradistcoder)
+* [Conrad Batraville](https://github.com/conradbatraville)
 
 
 ## Description
