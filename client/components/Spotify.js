@@ -213,7 +213,7 @@ class Spotify extends Component {
               }}
             >
               Feel2une is a song recommender that makes use of Spotify's web
-              API's and track analysis data to help users chose songs within the
+              API's and track analysis data to help users choose songs within the
               mood they'd like to feel.
             </div>
             <button

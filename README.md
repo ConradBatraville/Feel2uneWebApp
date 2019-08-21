@@ -4,7 +4,7 @@
 
 ## Description
 Feel2une is a song recommender that utilizes the Spotify's web
-API as well as Spotify's track analysis data to help users chose songs within the
+API as well as Spotify's track analysis data to help users choose songs within the
 mood they'd like to feel.
 
 ## Deployed Link
