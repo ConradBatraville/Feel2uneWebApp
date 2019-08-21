@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
-import React, { Component } from 'react';
-import queryString from 'query-string';
-import TrackView from './TrackView';
+import { connect } from "react-redux";
+import React, { Component } from "react";
+import queryString from "query-string";
+import TrackView from "./TrackView";
 import {
   createPlaylistThunk,
   getAllTrackIdThunk,
@@ -10,7 +10,7 @@ import {
   selectedHappyTrackThunk,
   selectedDanceTrackThunk,
   selectedSadTrackThunk
-} from '../store/playlist';
+} from "../store/playlist";
 
 class Spotify extends Component {
   constructor() {
@@ -28,8 +28,8 @@ class Spotify extends Component {
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
 
-    fetch('https://api.spotify.com/v1/me', {
-      headers: { Authorization: 'Bearer ' + accessToken }
+    fetch("https://api.spotify.com/v1/me", {
+      headers: { Authorization: "Bearer " + accessToken }
     })
       .then(response => response.json())
       .then(data =>
@@ -38,7 +38,8 @@ class Spotify extends Component {
             name: data.display_name,
             otherUserData: data
           }
-        }));
+        })
+      );
   }
 
   populateDatabase() {
@@ -55,7 +56,7 @@ class Spotify extends Component {
       });
 
       fetch(`https://api.spotify.com/v1/audio-features/${track.track.id}`, {
-        headers: { Authorization: 'Bearer ' + accessToken }
+        headers: { Authorization: "Bearer " + accessToken }
       })
         .then(response => response.json())
         .then(data => this.moodSetter(data, track.track.id));
@@ -67,9 +68,9 @@ class Spotify extends Component {
     let accessToken = parsed.access_token;
 
     fetch(
-      'https://api.spotify.com/v1/users/1240766765/playlists/5Tn5NiOELpuuWJFSpkQ8hV/tracks?limit=25',
+      "https://api.spotify.com/v1/users/1240766765/playlists/5Tn5NiOELpuuWJFSpkQ8hV/tracks?limit=25",
       {
-        headers: { Authorization: 'Bearer ' + accessToken }
+        headers: { Authorization: "Bearer " + accessToken }
       }
     )
       .then(response => response.json())
@@ -78,7 +79,8 @@ class Spotify extends Component {
           playlist: {
             giantPlaylist: data.items
           }
-        }));
+        })
+      );
   }
 
   moodSetter(featureData, spotifyId) {
@@ -87,13 +89,13 @@ class Spotify extends Component {
       (featureData.tempo >= 90 && featureData.tempo <= 160) &&
       (featureData.danceability >= 0.5 && featureData.danceability <= 0.75)
     ) {
-      this.props.updateMood({ mood: 'Dance-y', spotifyId });
+      this.props.updateMood({ mood: "Dance-y", spotifyId });
     } else if (featureData.valence >= 0.55 && featureData.valence <= 1) {
-      this.props.updateMood({ mood: 'Positive Vibes', spotifyId });
+      this.props.updateMood({ mood: "Positive Vibes", spotifyId });
     } else if (featureData.tempo >= 170) {
-      this.props.updateMood({ mood: 'Energy Boost', spotifyId });
+      this.props.updateMood({ mood: "Energy Boost", spotifyId });
     } else if (featureData.tempo >= 88 && featureData.tempo <= 146) {
-      this.props.updateMood({ mood: 'Mellow Mood', spotifyId });
+      this.props.updateMood({ mood: "Mellow Mood", spotifyId });
     }
   }
 
@@ -121,7 +123,7 @@ class Spotify extends Component {
     return (
       <div>
         <nav
-          style={{ fontSize: '20px', color: 'red' }}
+          style={{ fontSize: "20px", color: "red" }}
           className="navbar is-danger"
         >
           <div className="nav-left">
@@ -151,13 +153,13 @@ class Spotify extends Component {
         </nav>
         {this.state.user.name ? (
           <div>
-            <h1 style={{ fontSize: '35px', color: 'red' }}>
+            <h1 style={{ fontSize: "35px", color: "red" }}>
               Hey {this.state.user.name.toUpperCase()}, pick a mood:
             </h1>
-            <div style={{ marginTop: '60px' }} />
-            <div style={{ padding: '14px' }} className="columns">
+            <div style={{ marginTop: "60px" }} />
+            <div style={{ padding: "14px" }} className="columns">
               <button
-                style={{ color: 'red' }}
+                style={{ color: "red" }}
                 className="column button is-danger is-large is-outlined is-rounded"
                 type="button"
                 onClick={this.energyHandler}
@@ -165,7 +167,7 @@ class Spotify extends Component {
                 Energy Boost
               </button>
               <button
-                style={{ color: 'yellow' }}
+                style={{ color: "yellow" }}
                 className="column button is-warning is-large is-outlined is-rounded"
                 type="button"
                 onClick={this.happyHandler}
@@ -173,7 +175,7 @@ class Spotify extends Component {
                 Positive Vibes
               </button>
               <button
-                style={{ color: 'blue' }}
+                style={{ color: "blue" }}
                 className="column button is-info is-large is-outlined is-rounded"
                 type="button"
                 onClick={this.danceHandler}
@@ -181,7 +183,7 @@ class Spotify extends Component {
                 Dance-y
               </button>
               <button
-                style={{ color: 'green' }}
+                style={{ color: "green" }}
                 className="column button is-success is-large is-outlined is-rounded"
                 type="button"
                 onClick={this.sadHandler}
@@ -206,22 +208,25 @@ class Spotify extends Component {
             <div
               className="notification is-warning"
               style={{
-                marginTop: '35px',
-                marginBottom: '50px',
-                fontSize: '30px',
-                color: 'black'
+                marginTop: "35px",
+                marginBottom: "50px",
+                fontSize: "30px",
+                color: "black"
               }}
             >
-              Feel2une is a song recommender that makes use of Spotify's web
-              API's and track analysis data to help users choose songs within the
-              mood they'd like to feel.
+              Feel2une is a song recommender that makes use of Spotify's web API
+              and track analysis data to help users choose songs within the mood
+              they'd like to feel.
             </div>
             <button
               type="button"
               id="my_centered_buttons"
               className="column button is-success is-large is-outlined is-rounded"
-              onClick={() => (window.location = 'http://localhost:8888/login')}
-              style={{ padding: '15px', fontSize: '50px', marginTop: '5px' }}
+              onClick={() =>
+                (window.location =
+                  "http://feel2une-backend.herokuapp.com/login")
+              }
+              style={{ padding: "15px", fontSize: "50px", marginTop: "5px" }}
             >
               Sign in with Spotify
             </button>
@@ -248,4 +253,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Spotify);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Spotify);
