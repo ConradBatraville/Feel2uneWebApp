@@ -13,9 +13,3 @@ mood they'd like to feel.
 ## Technologies used
 I used PostgreSQL, Sequelize, and Express for the backend along with React/Redux for the frontend. Used OAUTH for authentication and getting user's account information. Utilized Spotify's Web Api endpoints for resources.
 
-## Get Started
-```
-git clone https://github.com/theradistCoder/Feel2uneWebApp.git
-npm install
-npm start
-Go to localhost:8080
