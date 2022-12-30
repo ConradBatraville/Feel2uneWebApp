@@ -70,7 +70,7 @@
     "chai": "^4.2.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "nodemon": "^1.18.3",
     "npm-merge-driver": "^2.3.5",
     "prettier": "1.11.1",
